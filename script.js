@@ -8,9 +8,13 @@ const directoryPath = "/Users/pranav/codedamn-classrooms/react-a-to-z";
 const staticPath = "/Users/pranav/codedamn-classrooms/react-static";
 
 function execShellCommand(cmd) {
-	const stdout = execSync(`${cmd}`);
-	console.log(stdout.toString());
-	return stdout;
+	try {
+		const stdout = execSync(`${cmd}`);
+		console.log(stdout.toString());
+		return stdout;
+	} catch (error) {
+		console.log(error, error?.stdout.toString(), error?.stderr.toString());
+	}
 }
 
 const createBranchesFromFolders = async () => {
