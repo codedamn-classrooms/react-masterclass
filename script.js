@@ -9,7 +9,7 @@ const staticPath = "/Users/pranav/codedamn-classrooms/react-static";
 
 function execShellCommand(cmd) {
 	const stdout = execSync(`${cmd}`);
-	console.log(stdout);
+	console.log(stdout.toString());
 	return stdout;
 }
 
